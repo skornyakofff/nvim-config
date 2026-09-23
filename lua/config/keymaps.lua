@@ -1,0 +1,5 @@
+vim.keymap.set("n", "nt", ":Neotree<CR>", { noremap = true, silent = true })
+vim.keymap.set("i", "fj", "<Esc>", { noremap = true, silent = true })
+vim.keymap.set("v", "fj", "<Esc>", { noremap = true, silent = true })
+vim.keymap.set("n", "tl", ":terminal<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<leader>fj', '<C-\\><C-n>', { noremap = true, silent = true })
