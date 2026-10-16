@@ -13,6 +13,7 @@ return {
         local telescope = require("telescope")
         telescope.setup({
             defaults = {
+                case_mode = "smart",
                 mappings = {
                     i = {
                         ["<C-j>"] = require("telescope.actions").move_selection_next,
