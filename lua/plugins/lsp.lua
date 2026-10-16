@@ -24,6 +24,7 @@ return {
                     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("Hover"))
                     vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, opts("Signature Help"))
                     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts("Code Action"))
+                    vim.keymap.set("v", "<leader>ca", vim.lsp.buf.code_action, opts("Code Action"))
                     vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts("Rename"))
                     vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, opts("Format"))
                 end,
