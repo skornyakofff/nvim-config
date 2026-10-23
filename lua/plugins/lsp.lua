@@ -68,42 +68,6 @@ return {
             })
             vim.lsp.enable("clangd")
 
-            local jdtls_path = vim.fn.glob(vim.fn.stdpath("data") .. "/mason/package/eclipse.jdt.ls/jdtls")
-            if jdtls_path ~= "" then
-                vim.lsp.config("jdtls", {
-                    cmd = {
-                        "java",
-                        "-Declipse.application=org.eclipse.jdt.ls.core.id1",
-                        "-Dosgi.bundle.parent=app",
-                        "-Dfile.encoding=UTF-8",
-                        "-jar",
-                        jdtls_path .. "/plugins/org.eclipse.equinox.launcher_*.jar",
-                    },
-                    root_dir = function(name)
-                        local root = vim.lsp.util.find_git_on_file(fname) or vim.lsp.util.find_root({".mvn", ".gradle", "pom.xml", "build.gradle" })
-                        return root or vim.fn.getcwd()
-                    end,
-                    settings = {
-                        java = {
-                            home = os.getenv("JAVA_HOME"),
-                            format = {
-                                enabled = true,
-                            },
-                            import = {
-                                gradle = {
-                                    enabled = true,
-                                },
-                                maven = {
-                                    enabled = true,
-                                },
-                            },
-                        },
-                    },
-                    filetypes = { "java" },
-                })
-                vim.lsp.enable("jdtls")
-            end
-
         end,
     },
 
